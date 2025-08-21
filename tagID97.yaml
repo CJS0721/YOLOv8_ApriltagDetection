@@ -1,0 +1,23 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# Tiger Pose dataset by Ultralytics
+# Documentation: https://docs.ultralytics.com/datasets/pose/tiger-pose/
+# Example usage: yolo train data=tiger-pose.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── tiger-pose ← downloads here (49.8 MB)
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: tagID97 # dataset root dir
+train: images/train # train images (relative to 'path') 210 images
+val: images/val # val images (relative to 'path') 53 images
+test: images/test
+# Keypoints
+
+# Classes
+names:
+  0: tag
+
+#yolo task=detect mode=train model=./yolov8n.pt data="tagID97.yaml" workers=0 epochs=100 batch=16
+#yolo task=detect mode=val model=runs/detect/train/weights/best.pt data=tagID97.yaml split=test workers=0 batch=16
